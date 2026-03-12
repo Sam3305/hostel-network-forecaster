@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Predictor AI - Landing</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar glass-panel-nav">
+        <div class="logo">
+            <h1>NET<span class="gradient-text">PREDICT</span></h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link active">Public View</a>
+            <a href="login.php?logout=1" class="nav-link neon-btn">Login</a>
+        </div>
+    </nav>
+
+    <div class="dashboard">
+        <header class="hero-section text-center">
+            <h1 class="mega-title">Futuristic Network Intelligence</h1>
+            <p class="subtitle">AI-driven predictive analytics monitoring campus core traffic in real-time.</p>
+        </header>
+
+        <section class="kpi-grid public-kpi">
+            <div class="kpi-card glass-panel">
+                <div class="kpi-title">Current Throughput</div>
+                <div class="kpi-value highlight-cyan" id="val-throughput">1.2 Mbps</div>
+            </div>
+            <div class="kpi-card glass-panel">
+                <div class="kpi-title">Current Packet Rate</div>
+                <div class="kpi-value highlight-blue" id="val-packet">45k p/s</div>
+            </div>
+            <div class="kpi-card glass-panel kpi-success">
+                <div class="kpi-title">Network Status</div>
+                <div class="kpi-value highlight-green" id="val-status">OPTIMAL</div>
+            </div>
+        </section>
+
+        <section class="glass-panel timeline-panel" style="margin-bottom: 1.5rem; text-align: center;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <h3 style="margin: 0; color: var(--cyan); font-size: 0.9rem; text-transform: uppercase;">Time Machine Scrubber</h3>
+                <span id="slider-time-label" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-main); font-weight: bold;">LIVE (Real-Time)</span>
+            </div>
+            <input type="range" id="timeline-slider" min="0" max="100" value="100" style="width: 100%; cursor: pointer;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
+                <div class="horizon-toggles">
+                    <button class="toggle-btn" data-horizon="2s">2 Sec</button>
+                    <button class="toggle-btn" data-horizon="5s">5 Sec</button>
+                    <button class="toggle-btn" data-horizon="10s">10 Sec</button>
+                    <button class="toggle-btn" data-horizon="1m">1 Min</button>
+                    <button class="toggle-btn active" data-horizon="5m">5 Min</button>
+                    <button class="toggle-btn" data-horizon="60m">1 Hour</button>
+                </div>
+                <button id="btn-snap-live" class="action-btn" style="font-size: 0.7rem; padding: 0.3rem 0.6rem;">Snap to Live</button>
+            </div>
+        </section>
+
+        <section class="glass-panel group-panel">
+            <h2 class="section-title">PUBLIC GRAPHS</h2>
+            <div class="chart-container half-chart"><canvas id="chart-public-throughput"></canvas></div>
+            <div class="chart-container half-chart"><canvas id="chart-public-packet"></canvas></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
