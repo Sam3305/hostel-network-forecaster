@@ -45,8 +45,14 @@ if ($result && $result->num_rows > 0) {
 $response['metrics'] = array_reverse($response['metrics']);
 
 if ($requested_time && $wants_ground_truth) {
-    $pad_counts = ['2s' => 2, '5s' => 5, '10s' => 10, '1m' => 60, '5m' => 300, '15m' => 900, '60m' => 3600];
-    $limit = isset($pad_counts[$horizon]) ? $pad_counts[$horizon] : 300;
+    $limit = 300;
+    if (preg_match('/^(\d+)s$/', $horizon, $matches)) {
+        $limit = (int)$matches[1];
+    } elseif (preg_match('/^(\d+)m$/', $horizon, $matches)) {
+        $limit = (int)$matches[1] * 60;
+    } elseif (preg_match('/^(\d+)h$/', $horizon, $matches)) {
+        $limit = (int)$matches[1] * 3600;
+    }
 
     $gt_sql = "SELECT metric_timestamp, throughput_mbps, packet_rate, active_flows, latency_ms, 
             retransmission_rate, packet_drop_rate, burstiness, flow_entropy 

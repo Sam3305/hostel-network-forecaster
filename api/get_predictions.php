@@ -6,7 +6,11 @@ date_default_timezone_set('Asia/Kolkata');
 
 $requested_time = isset($_GET['time']) ? $_GET['time'] : null;
 
-$horizon_offsets = [2 => '2s', 5 => '5s', 10 => '10s', 60 => '1m', 300 => '5m', 900 => '15m', 3600 => '60m'];
+$horizon_offsets = [300 => '5m', 900 => '15m', 3600 => '60m'];
+// Add 1s-60s dense offsets
+for ($i = 1; $i <= 60; $i++) {
+    $horizon_offsets[$i] = $i . 's';
+}
 
 $sql = "";
 $stmt = null;
@@ -54,12 +58,29 @@ if ($result && $result->num_rows > 0) {
     }
 }
 
-echo json_encode([
+$eval_path = '../backend/ml/evaluation_results.json';
+$eval_results = [];
+if (file_exists($eval_path)) {
+    $eval_results = json_decode(file_get_contents($eval_path), true);
+}
+
+$response = [
     'status' => 'success',
     'predictions' => $predictions_dict,
     'latest_surge_probability' => (float) $latest_surge,
     'latest_congestion_risk' => (float) $latest_congestion
-]);
+];
+
+// Attach accuracy for the default or requested horizon
+// Defaulting to 5m for the summary metrics if not specified
+$horizon = isset($_GET['horizon']) ? $_GET['horizon'] : '5m';
+if (isset($eval_results[$horizon]['classification_accuracy']['congestion'])) {
+    $response['model_accuracy'] = (float)$eval_results[$horizon]['classification_accuracy']['congestion'] * 100;
+} else {
+    $response['model_accuracy'] = 0;
+}
+
+echo json_encode($response);
 
 $conn->close();
 ?>

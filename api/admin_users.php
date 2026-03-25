@@ -41,6 +41,34 @@ if ($method === 'GET') {
         } else {
             echo json_encode(['status' => 'error', 'message' => 'User ID is required']);
         }
+    } elseif (isset($data['action']) && $data['action'] === 'create_user') {
+        $username = trim($data['username'] ?? '');
+        $password = trim($data['password'] ?? '');
+        $role = $data['role'] ?? 'user';
+
+        if (empty($username) || empty($password)) {
+            echo json_encode(['status' => 'error', 'message' => 'Username and password are required']);
+        } else {
+            $check = $conn->prepare("SELECT id FROM users WHERE username = ?");
+            $check->bind_param("s", $username);
+            $check->execute();
+            if ($check->get_result()->num_rows > 0) {
+                echo json_encode(['status' => 'error', 'message' => 'Username already exists']);
+            } else {
+                $hashed = password_hash($password, PASSWORD_DEFAULT);
+                $stmt = $conn->prepare("INSERT INTO users (username, password, role, account_status) VALUES (?, ?, ?, 'active')");
+                if ($stmt) {
+                    $stmt->bind_param("sss", $username, $hashed, $role);
+                    if ($stmt->execute()) {
+                        echo json_encode(['status' => 'success', 'message' => "User '$username' created"]);
+                    } else {
+                        echo json_encode(['status' => 'error', 'message' => 'Failed to create user']);
+                    }
+                    $stmt->close();
+                }
+            }
+            $check->close();
+        }
     } else {
         echo json_encode(['status' => 'error', 'message' => 'Invalid action']);
     }

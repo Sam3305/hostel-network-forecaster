@@ -1,0 +1,1010 @@
+{
+    "1s": {
+        "regression_mae": {
+            "throughput_mbps": 0.027231519700928342,
+            "packet_rate": 5.7595321113675855,
+            "active_flows": 0.5058826068378597,
+            "latency_ms": 0.012210666023906936,
+            "retransmission_rate": 0.1050087649346252,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 2090.9476833568087,
+            "flow_entropy": 0.1419837914398736
+        },
+        "classification_accuracy": {
+            "surge": 0.9898949070331448,
+            "congestion": 0.9488682295877122
+        }
+    },
+    "2s": {
+        "regression_mae": {
+            "throughput_mbps": 0.04421462601157177,
+            "packet_rate": 8.63054207529671,
+            "active_flows": 0.7629437876402998,
+            "latency_ms": 0.018745804321196095,
+            "retransmission_rate": 0.144698363598139,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 2568.3881194933974,
+            "flow_entropy": 0.20031463015125833
+        },
+        "classification_accuracy": {
+            "surge": 0.9799919159256265,
+            "congestion": 0.8811641067097817
+        }
+    },
+    "3s": {
+        "regression_mae": {
+            "throughput_mbps": 0.06551639870423119,
+            "packet_rate": 11.138634020624956,
+            "active_flows": 0.900454504989094,
+            "latency_ms": 0.024496744474468028,
+            "retransmission_rate": 0.17645821487053667,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3041.6139102995626,
+            "flow_entropy": 0.23533490612821803
+        },
+        "classification_accuracy": {
+            "surge": 0.9727162489894907,
+            "congestion": 0.7645513338722716
+        }
+    },
+    "4s": {
+        "regression_mae": {
+            "throughput_mbps": 0.0866905409500084,
+            "packet_rate": 12.89919869676172,
+            "active_flows": 0.990894751483236,
+            "latency_ms": 0.022763652128028437,
+            "retransmission_rate": 0.19008912437295797,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3133.527869334449,
+            "flow_entropy": 0.25126753760852677
+        },
+        "classification_accuracy": {
+            "surge": 0.9658447857720291,
+            "congestion": 0.7303961196443007
+        }
+    },
+    "5s": {
+        "regression_mae": {
+            "throughput_mbps": 0.1294801652906376,
+            "packet_rate": 15.198751829339304,
+            "active_flows": 1.1180075564110774,
+            "latency_ms": 0.026119436238183736,
+            "retransmission_rate": 0.2252570905034308,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3534.543078932289,
+            "flow_entropy": 0.28370080227553507
+        },
+        "classification_accuracy": {
+            "surge": 0.9569523039611965,
+            "congestion": 0.6909862570735651
+        }
+    },
+    "6s": {
+        "regression_mae": {
+            "throughput_mbps": 0.21832248701693538,
+            "packet_rate": 16.001119117632737,
+            "active_flows": 1.1639582740749772,
+            "latency_ms": 0.022217584073672077,
+            "retransmission_rate": 0.2407190173612466,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3545.2128862771237,
+            "flow_entropy": 0.2888210283724261
+        },
+        "classification_accuracy": {
+            "surge": 0.9419967663702506,
+            "congestion": 0.6477364591754244
+        }
+    },
+    "7s": {
+        "regression_mae": {
+            "throughput_mbps": 0.2515964126854649,
+            "packet_rate": 16.12994894152605,
+            "active_flows": 1.1695066677916892,
+            "latency_ms": 0.018676375374771337,
+            "retransmission_rate": 0.2446226362127478,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3555.602948798355,
+            "flow_entropy": 0.2856756771823757
+        },
+        "classification_accuracy": {
+            "surge": 0.9571544058205336,
+            "congestion": 0.652789005658852
+        }
+    },
+    "8s": {
+        "regression_mae": {
+            "throughput_mbps": 0.33874071486519874,
+            "packet_rate": 16.662384437454644,
+            "active_flows": 1.1770265169845249,
+            "latency_ms": 0.018750254040430635,
+            "retransmission_rate": 0.26467961543867824,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3585.038011244456,
+            "flow_entropy": 0.2876272564422034
+        },
+        "classification_accuracy": {
+            "surge": 0.9359337105901374,
+            "congestion": 0.6932093775262732
+        }
+    },
+    "9s": {
+        "regression_mae": {
+            "throughput_mbps": 0.40920795182642133,
+            "packet_rate": 17.322853899927225,
+            "active_flows": 1.163530378835088,
+            "latency_ms": 0.01784521221187931,
+            "retransmission_rate": 0.2800221850772004,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3593.103182601035,
+            "flow_entropy": 0.28405474378052314
+        },
+        "classification_accuracy": {
+            "surge": 0.9363379143088116,
+            "congestion": 0.706143896523848
+        }
+    },
+    "10s": {
+        "regression_mae": {
+            "throughput_mbps": 0.6658613346702895,
+            "packet_rate": 19.239598217816148,
+            "active_flows": 1.1417316908593516,
+            "latency_ms": 0.018649882711618368,
+            "retransmission_rate": 0.2650313948731875,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3653.5332930187787,
+            "flow_entropy": 0.2833021981927938
+        },
+        "classification_accuracy": {
+            "surge": 0.9424009700889249,
+            "congestion": 0.6788601455133387
+        }
+    },
+    "11s": {
+        "regression_mae": {
+            "throughput_mbps": 0.7614698514176507,
+            "packet_rate": 19.306129788465814,
+            "active_flows": 1.1481244746195087,
+            "latency_ms": 0.020957002086663873,
+            "retransmission_rate": 0.2862335343246734,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3730.6191267853073,
+            "flow_entropy": 0.28359740458014326
+        },
+        "classification_accuracy": {
+            "surge": 0.9458367016976557,
+            "congestion": 0.7120048504446241
+        }
+    },
+    "12s": {
+        "regression_mae": {
+            "throughput_mbps": 0.6514011696532452,
+            "packet_rate": 19.41707338018579,
+            "active_flows": 1.1474729936356112,
+            "latency_ms": 0.019350478390148872,
+            "retransmission_rate": 0.27447549201252885,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3869.745021649511,
+            "flow_entropy": 0.28575580408064705
+        },
+        "classification_accuracy": {
+            "surge": 0.9413904607922393,
+            "congestion": 0.6952303961196443
+        }
+    },
+    "13s": {
+        "regression_mae": {
+            "throughput_mbps": 0.6279768481664304,
+            "packet_rate": 18.097557950944985,
+            "active_flows": 1.1278026204197853,
+            "latency_ms": 0.01849461890927346,
+            "retransmission_rate": 0.2628350154870908,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3699.8342570234836,
+            "flow_entropy": 0.2831092132386259
+        },
+        "classification_accuracy": {
+            "surge": 0.9603880355699272,
+            "congestion": 0.6978577202910267
+        }
+    },
+    "14s": {
+        "regression_mae": {
+            "throughput_mbps": 0.5021237344085271,
+            "packet_rate": 17.589680608357742,
+            "active_flows": 1.0868801095356555,
+            "latency_ms": 0.02030994057992173,
+            "retransmission_rate": 0.2500329386918988,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3598.2525576151033,
+            "flow_entropy": 0.28125297348773376
+        },
+        "classification_accuracy": {
+            "surge": 0.954122877930477,
+            "congestion": 0.7134195634599838
+        }
+    },
+    "15s": {
+        "regression_mae": {
+            "throughput_mbps": 0.1446080416015729,
+            "packet_rate": 17.553746350850417,
+            "active_flows": 1.0721846881564243,
+            "latency_ms": 0.027260114216776064,
+            "retransmission_rate": 0.2579995255970939,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3594.8712498977475,
+            "flow_entropy": 0.2802535190929515
+        },
+        "classification_accuracy": {
+            "surge": 0.9460388035569928,
+            "congestion": 0.7303961196443007
+        }
+    },
+    "16s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11619517842404242,
+            "packet_rate": 17.581623351313745,
+            "active_flows": 1.1028185775420702,
+            "latency_ms": 0.02637353355004122,
+            "retransmission_rate": 0.2624886216844148,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3596.254892531283,
+            "flow_entropy": 0.28134215167470394
+        },
+        "classification_accuracy": {
+            "surge": 0.956143896523848,
+            "congestion": 0.7354486661277284
+        }
+    },
+    "17s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11160883111258144,
+            "packet_rate": 17.492560093134955,
+            "active_flows": 1.1098532387587752,
+            "latency_ms": 0.023699665029751245,
+            "retransmission_rate": 0.2752401618871928,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3597.415395845388,
+            "flow_entropy": 0.28355617682935735
+        },
+        "classification_accuracy": {
+            "surge": 0.9648342764753436,
+            "congestion": 0.7039207760711399
+        }
+    },
+    "18s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11238106841822001,
+            "packet_rate": 17.78346643630978,
+            "active_flows": 1.1054771197063848,
+            "latency_ms": 0.019752513055849776,
+            "retransmission_rate": 0.27043271863258933,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3596.1713461204813,
+            "flow_entropy": 0.28184402100586947
+        },
+        "classification_accuracy": {
+            "surge": 0.9589733225545675,
+            "congestion": 0.7162489894907034
+        }
+    },
+    "19s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11154373077784502,
+            "packet_rate": 17.759799820642463,
+            "active_flows": 1.1281998347349487,
+            "latency_ms": 0.018025831635643655,
+            "retransmission_rate": 0.27680837606782155,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3589.4874664856297,
+            "flow_entropy": 0.28351665571050866
+        },
+        "classification_accuracy": {
+            "surge": 0.965642683912692,
+            "congestion": 0.7227162489894907
+        }
+    },
+    "20s": {
+        "regression_mae": {
+            "throughput_mbps": 0.10948718244975664,
+            "packet_rate": 17.619365687628573,
+            "active_flows": 1.1379480368684358,
+            "latency_ms": 0.01812221153264408,
+            "retransmission_rate": 0.2744302096652878,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3595.816754232435,
+            "flow_entropy": 0.28142220909641363
+        },
+        "classification_accuracy": {
+            "surge": 0.946645109135004,
+            "congestion": 0.7029102667744543
+        }
+    },
+    "21s": {
+        "regression_mae": {
+            "throughput_mbps": 0.10983579773480999,
+            "packet_rate": 17.83371651906975,
+            "active_flows": 1.1553051184528573,
+            "latency_ms": 0.017754957815213315,
+            "retransmission_rate": 0.2786464281197954,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3582.7161012143883,
+            "flow_entropy": 0.2825960881145635
+        },
+        "classification_accuracy": {
+            "surge": 0.9476556184316896,
+            "congestion": 0.5889248181083266
+        }
+    },
+    "22s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11318619612762115,
+            "packet_rate": 17.711204233435534,
+            "active_flows": 1.142834954042057,
+            "latency_ms": 0.017870296506453158,
+            "retransmission_rate": 0.28443493987317114,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3587.2169959584535,
+            "flow_entropy": 0.28215226737607557
+        },
+        "classification_accuracy": {
+            "surge": 0.9571544058205336,
+            "congestion": 0.5624494745351657
+        }
+    },
+    "23s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11495255713693411,
+            "packet_rate": 17.858246945795166,
+            "active_flows": 1.1488472183770297,
+            "latency_ms": 0.01784853527234536,
+            "retransmission_rate": 0.28918737901187636,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3595.831845080572,
+            "flow_entropy": 0.2843883538049098
+        },
+        "classification_accuracy": {
+            "surge": 0.9436135812449474,
+            "congestion": 0.5590137429264349
+        }
+    },
+    "24s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11671586703122214,
+            "packet_rate": 17.876374096955228,
+            "active_flows": 1.1448632689763585,
+            "latency_ms": 0.01797814543522951,
+            "retransmission_rate": 0.28855505841863077,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3599.3638293948143,
+            "flow_entropy": 0.2851750473029245
+        },
+        "classification_accuracy": {
+            "surge": 0.9581649151172191,
+            "congestion": 0.5996362166531932
+        }
+    },
+    "25s": {
+        "regression_mae": {
+            "throughput_mbps": 0.12347106935455576,
+            "packet_rate": 17.89644086143136,
+            "active_flows": 1.1354262037631866,
+            "latency_ms": 0.018218701669998845,
+            "retransmission_rate": 0.29061393554345677,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3602.7503546970174,
+            "flow_entropy": 0.2848468956415058
+        },
+        "classification_accuracy": {
+            "surge": 0.9591754244139046,
+            "congestion": 0.5842764753435732
+        }
+    },
+    "26s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11759417337585618,
+            "packet_rate": 18.02255215550394,
+            "active_flows": 1.141191046278421,
+            "latency_ms": 0.018295144619017958,
+            "retransmission_rate": 0.28894338367931083,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3599.3745924640625,
+            "flow_entropy": 0.283850311543026
+        },
+        "classification_accuracy": {
+            "surge": 0.9490703314470493,
+            "congestion": 0.5424413904607922
+        }
+    },
+    "27s": {
+        "regression_mae": {
+            "throughput_mbps": 0.12175641758993277,
+            "packet_rate": 17.67407496199072,
+            "active_flows": 1.1284797767910542,
+            "latency_ms": 0.01811791427908457,
+            "retransmission_rate": 0.2911112218491531,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3594.084582852189,
+            "flow_entropy": 0.2870903531084392
+        },
+        "classification_accuracy": {
+            "surge": 0.9444219886822959,
+            "congestion": 0.6370250606305577
+        }
+    },
+    "28s": {
+        "regression_mae": {
+            "throughput_mbps": 0.12610481396939235,
+            "packet_rate": 17.872225546952496,
+            "active_flows": 1.1449043976267983,
+            "latency_ms": 0.01818647509574495,
+            "retransmission_rate": 0.2914185050263707,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3594.350693300995,
+            "flow_entropy": 0.28535947109174614
+        },
+        "classification_accuracy": {
+            "surge": 0.9417946645109135,
+            "congestion": 0.6624898949070331
+        }
+    },
+    "29s": {
+        "regression_mae": {
+            "throughput_mbps": 0.12609182123720503,
+            "packet_rate": 17.846664603968833,
+            "active_flows": 1.1346268455348099,
+            "latency_ms": 0.018261386649912996,
+            "retransmission_rate": 0.29087639381523045,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3591.7727106640637,
+            "flow_entropy": 0.28578841297231383
+        },
+        "classification_accuracy": {
+            "surge": 0.950485044462409,
+            "congestion": 0.6752223120452708
+        }
+    },
+    "30s": {
+        "regression_mae": {
+            "throughput_mbps": 0.12356415962344208,
+            "packet_rate": 17.722529829618132,
+            "active_flows": 1.1308716493165583,
+            "latency_ms": 0.01806364207863796,
+            "retransmission_rate": 0.29384137420005846,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3594.8778105984725,
+            "flow_entropy": 0.28789121711447246
+        },
+        "classification_accuracy": {
+            "surge": 0.9452303961196443,
+            "congestion": 0.6632983023443816
+        }
+    },
+    "31s": {
+        "regression_mae": {
+            "throughput_mbps": 0.12821021591025816,
+            "packet_rate": 17.59966870539595,
+            "active_flows": 1.137236128628206,
+            "latency_ms": 0.018049951308706663,
+            "retransmission_rate": 0.2921871453607801,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3580.064272042061,
+            "flow_entropy": 0.2880890555170687
+        },
+        "classification_accuracy": {
+            "surge": 0.9494745351657236,
+            "congestion": 0.6224737267582862
+        }
+    },
+    "32s": {
+        "regression_mae": {
+            "throughput_mbps": 0.12616430114818472,
+            "packet_rate": 17.463273104815688,
+            "active_flows": 1.123232833300277,
+            "latency_ms": 0.018029951188813915,
+            "retransmission_rate": 0.2922672197025611,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3574.7218772751476,
+            "flow_entropy": 0.28851424390428954
+        },
+        "classification_accuracy": {
+            "surge": 0.944624090541633,
+            "congestion": 0.6364187550525465
+        }
+    },
+    "33s": {
+        "regression_mae": {
+            "throughput_mbps": 0.1228484561461761,
+            "packet_rate": 17.44216931016578,
+            "active_flows": 1.1217695515099901,
+            "latency_ms": 0.0180717326225786,
+            "retransmission_rate": 0.2880455335704519,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3574.8432367086025,
+            "flow_entropy": 0.28558193307178104
+        },
+        "classification_accuracy": {
+            "surge": 0.9573565076798707,
+            "congestion": 0.6309620048504446
+        }
+    },
+    "34s": {
+        "regression_mae": {
+            "throughput_mbps": 0.12621847403234296,
+            "packet_rate": 17.75603783157629,
+            "active_flows": 1.0812170238579681,
+            "latency_ms": 0.017968974837799044,
+            "retransmission_rate": 0.278680243078313,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3578.1589638631795,
+            "flow_entropy": 0.2852294826106208
+        },
+        "classification_accuracy": {
+            "surge": 0.9492724333063864,
+            "congestion": 0.652789005658852
+        }
+    },
+    "35s": {
+        "regression_mae": {
+            "throughput_mbps": 0.1315426047982129,
+            "packet_rate": 17.81089616043489,
+            "active_flows": 1.0561275749121741,
+            "latency_ms": 0.0180472545495076,
+            "retransmission_rate": 0.2457016274397464,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3589.4445916755462,
+            "flow_entropy": 0.2847953104277281
+        },
+        "classification_accuracy": {
+            "surge": 0.9535165723524657,
+            "congestion": 0.6721907841552143
+        }
+    },
+    "36s": {
+        "regression_mae": {
+            "throughput_mbps": 0.1306094436714517,
+            "packet_rate": 17.793214601321672,
+            "active_flows": 1.0926781478386884,
+            "latency_ms": 0.017948508981728537,
+            "retransmission_rate": 0.2693723489840031,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3580.471133144106,
+            "flow_entropy": 0.2886664602717721
+        },
+        "classification_accuracy": {
+            "surge": 0.950282942603072,
+            "congestion": 0.6938156831042845
+        }
+    },
+    "37s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11981594491607488,
+            "packet_rate": 17.81497776145981,
+            "active_flows": 1.1067053391842858,
+            "latency_ms": 0.017961070837967632,
+            "retransmission_rate": 0.2757527175443735,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3585.6222882097845,
+            "flow_entropy": 0.2868805392752565
+        },
+        "classification_accuracy": {
+            "surge": 0.9585691188358932,
+            "congestion": 0.6919967663702506
+        }
+    },
+    "38s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11734491893429752,
+            "packet_rate": 17.487545610302963,
+            "active_flows": 1.0849117550429745,
+            "latency_ms": 0.018389959073407902,
+            "retransmission_rate": 0.265287444596698,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3574.6632264529394,
+            "flow_entropy": 0.2879247558058089
+        },
+        "classification_accuracy": {
+            "surge": 0.9527081649151172,
+            "congestion": 0.6531932093775262
+        }
+    },
+    "39s": {
+        "regression_mae": {
+            "throughput_mbps": 0.12432617361933644,
+            "packet_rate": 17.397498170483374,
+            "active_flows": 1.0514202767451544,
+            "latency_ms": 0.018143286959630175,
+            "retransmission_rate": 0.23695910559971695,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3573.3701606437567,
+            "flow_entropy": 0.2872764752052018
+        },
+        "classification_accuracy": {
+            "surge": 0.9448261924009701,
+            "congestion": 0.6210590137429264
+        }
+    },
+    "40s": {
+        "regression_mae": {
+            "throughput_mbps": 0.1190439133544928,
+            "packet_rate": 17.54391877525934,
+            "active_flows": 1.0587602319405174,
+            "latency_ms": 0.017972318016338987,
+            "retransmission_rate": 0.2371461185965859,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3572.5561069379783,
+            "flow_entropy": 0.2867011763920549
+        },
+        "classification_accuracy": {
+            "surge": 0.9458367016976557,
+            "congestion": 0.690784155214228
+        }
+    },
+    "41s": {
+        "regression_mae": {
+            "throughput_mbps": 0.10885743366167527,
+            "packet_rate": 17.396160148225103,
+            "active_flows": 1.1176352045086961,
+            "latency_ms": 0.01799842126281953,
+            "retransmission_rate": 0.266870972875976,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3574.78395459665,
+            "flow_entropy": 0.289524542212413
+        },
+        "classification_accuracy": {
+            "surge": 0.9339126919967664,
+            "congestion": 0.7045270816491511
+        }
+    },
+    "42s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11137487214651758,
+            "packet_rate": 17.301982355194895,
+            "active_flows": 1.1536781755106629,
+            "latency_ms": 0.01811898883247625,
+            "retransmission_rate": 0.28379455346558863,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3574.641766484534,
+            "flow_entropy": 0.29352850993494883
+        },
+        "classification_accuracy": {
+            "surge": 0.910266774454325,
+            "congestion": 0.707962813257882
+        }
+    },
+    "43s": {
+        "regression_mae": {
+            "throughput_mbps": 0.10873372082359264,
+            "packet_rate": 17.264025703686908,
+            "active_flows": 1.1894117689171242,
+            "latency_ms": 0.017891991399617994,
+            "retransmission_rate": 0.2938188008904407,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3569.9883463490496,
+            "flow_entropy": 0.2972676109763279
+        },
+        "classification_accuracy": {
+            "surge": 0.9139046079223929,
+            "congestion": 0.748181083265966
+        }
+    },
+    "44s": {
+        "regression_mae": {
+            "throughput_mbps": 0.16228715555937068,
+            "packet_rate": 17.283572494183804,
+            "active_flows": 1.1960822708103673,
+            "latency_ms": 0.017874083052255494,
+            "retransmission_rate": 0.299532025987309,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3571.1226408181465,
+            "flow_entropy": 0.29667305426865115
+        },
+        "classification_accuracy": {
+            "surge": 0.9155214227970897,
+            "congestion": 0.719482619240097
+        }
+    },
+    "45s": {
+        "regression_mae": {
+            "throughput_mbps": 0.20555261666426294,
+            "packet_rate": 17.465427304297176,
+            "active_flows": 1.2151971633336003,
+            "latency_ms": 0.017956087319344245,
+            "retransmission_rate": 0.3122882218592566,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3572.1003796061564,
+            "flow_entropy": 0.29832678138595675
+        },
+        "classification_accuracy": {
+            "surge": 0.9349232012934519,
+            "congestion": 0.6742118027485853
+        }
+    },
+    "46s": {
+        "regression_mae": {
+            "throughput_mbps": 0.25205834950335276,
+            "packet_rate": 18.79049708758426,
+            "active_flows": 1.215225529844181,
+            "latency_ms": 0.017852889683974478,
+            "retransmission_rate": 0.3140315329169386,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3603.1497412468975,
+            "flow_entropy": 0.2973905376071206
+        },
+        "classification_accuracy": {
+            "surge": 0.9379547291835085,
+            "congestion": 0.6875505254648343
+        }
+    },
+    "47s": {
+        "regression_mae": {
+            "throughput_mbps": 0.35786037906405394,
+            "packet_rate": 19.61140261492425,
+            "active_flows": 1.2290094613836193,
+            "latency_ms": 0.01795958348975225,
+            "retransmission_rate": 0.3168862847992339,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3657.188653243123,
+            "flow_entropy": 0.2980666360388982
+        },
+        "classification_accuracy": {
+            "surge": 0.9177445432497979,
+            "congestion": 0.675424413904608
+        }
+    },
+    "48s": {
+        "regression_mae": {
+            "throughput_mbps": 0.5818187083118939,
+            "packet_rate": 20.14149936236194,
+            "active_flows": 1.234847856319616,
+            "latency_ms": 0.018140778026075038,
+            "retransmission_rate": 0.32050924773809725,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3729.8398034272273,
+            "flow_entropy": 0.3007012870378425
+        },
+        "classification_accuracy": {
+            "surge": 0.9157235246564268,
+            "congestion": 0.6301535974130962
+        }
+    },
+    "49s": {
+        "regression_mae": {
+            "throughput_mbps": 0.512652480986734,
+            "packet_rate": 23.47979070521596,
+            "active_flows": 1.2446205210280978,
+            "latency_ms": 0.018069852033460773,
+            "retransmission_rate": 0.3205554916106826,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 4061.2243982980854,
+            "flow_entropy": 0.2967148464416436
+        },
+        "classification_accuracy": {
+            "surge": 0.9262328213419564,
+            "congestion": 0.6370250606305577
+        }
+    },
+    "50s": {
+        "regression_mae": {
+            "throughput_mbps": 0.5503546896050567,
+            "packet_rate": 26.461765926772774,
+            "active_flows": 1.2124888791899193,
+            "latency_ms": 0.017776175018378627,
+            "retransmission_rate": 0.3165048706781015,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 4474.81843336606,
+            "flow_entropy": 0.29981884660720826
+        },
+        "classification_accuracy": {
+            "surge": 0.9413904607922393,
+            "congestion": 0.6742118027485853
+        }
+    },
+    "51s": {
+        "regression_mae": {
+            "throughput_mbps": 0.453139403067288,
+            "packet_rate": 23.971670835559756,
+            "active_flows": 1.203470574624132,
+            "latency_ms": 0.01784980451694167,
+            "retransmission_rate": 0.3264715661148456,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 4498.246623764096,
+            "flow_entropy": 0.30131950455371853
+        },
+        "classification_accuracy": {
+            "surge": 0.9444219886822959,
+            "congestion": 0.6663298302344381
+        }
+    },
+    "52s": {
+        "regression_mae": {
+            "throughput_mbps": 0.4566772441683508,
+            "packet_rate": 18.66709541142131,
+            "active_flows": 1.211295748103889,
+            "latency_ms": 0.01786079931587767,
+            "retransmission_rate": 0.3245637078427281,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3903.6126038103785,
+            "flow_entropy": 0.29863767110124556
+        },
+        "classification_accuracy": {
+            "surge": 0.9480598221503638,
+            "congestion": 0.6582457558609539
+        }
+    },
+    "53s": {
+        "regression_mae": {
+            "throughput_mbps": 0.37917642949763725,
+            "packet_rate": 17.529678457797104,
+            "active_flows": 1.2049632768237797,
+            "latency_ms": 0.018120697390457213,
+            "retransmission_rate": 0.3194114202095082,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3631.1568865193954,
+            "flow_entropy": 0.2971744560120659
+        },
+        "classification_accuracy": {
+            "surge": 0.9361358124494745,
+            "congestion": 0.6760307194826193
+        }
+    },
+    "54s": {
+        "regression_mae": {
+            "throughput_mbps": 0.21973616186160652,
+            "packet_rate": 17.233493534238857,
+            "active_flows": 1.1995360785756466,
+            "latency_ms": 0.018071360556847098,
+            "retransmission_rate": 0.31541472213656624,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3576.9383055096073,
+            "flow_entropy": 0.29313113061177126
+        },
+        "classification_accuracy": {
+            "surge": 0.9324979789814066,
+            "congestion": 0.6790622473726758
+        }
+    },
+    "55s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11681058991388721,
+            "packet_rate": 17.30908576340664,
+            "active_flows": 1.2229792507984223,
+            "latency_ms": 0.017859926503691587,
+            "retransmission_rate": 0.32106706467451707,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3578.1896764679723,
+            "flow_entropy": 0.2931615550587499
+        },
+        "classification_accuracy": {
+            "surge": 0.9430072756669361,
+            "congestion": 0.6715844785772029
+        }
+    },
+    "56s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11386649536599734,
+            "packet_rate": 17.275040683114153,
+            "active_flows": 1.2332263061281359,
+            "latency_ms": 0.017830655596431832,
+            "retransmission_rate": 0.31768303720782676,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3579.637329964799,
+            "flow_entropy": 0.2961930154910508
+        },
+        "classification_accuracy": {
+            "surge": 0.9333063864187551,
+            "congestion": 0.6808811641067097
+        }
+    },
+    "57s": {
+        "regression_mae": {
+            "throughput_mbps": 0.1148781868067564,
+            "packet_rate": 17.12660256241634,
+            "active_flows": 1.2387096771041328,
+            "latency_ms": 0.017840062026163967,
+            "retransmission_rate": 0.32275095356393485,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3570.598349640264,
+            "flow_entropy": 0.2992883953077676
+        },
+        "classification_accuracy": {
+            "surge": 0.9601859337105901,
+            "congestion": 0.6881568310428456
+        }
+    },
+    "58s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11729083451604326,
+            "packet_rate": 17.05214936944295,
+            "active_flows": 1.2324801771122311,
+            "latency_ms": 0.017879479136890218,
+            "retransmission_rate": 0.3267897928397251,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3572.1291031649985,
+            "flow_entropy": 0.298812441113132
+        },
+        "classification_accuracy": {
+            "surge": 0.9506871463217461,
+            "congestion": 0.7006871463217461
+        }
+    },
+    "59s": {
+        "regression_mae": {
+            "throughput_mbps": 0.11787969248927085,
+            "packet_rate": 17.09854010565202,
+            "active_flows": 1.2171896639232591,
+            "latency_ms": 0.018098795730342315,
+            "retransmission_rate": 0.32747005111580463,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3572.648685486879,
+            "flow_entropy": 0.3023522631368583
+        },
+        "classification_accuracy": {
+            "surge": 0.9571544058205336,
+            "congestion": 0.6921988682295878
+        }
+    },
+    "60s": {
+        "regression_mae": {
+            "throughput_mbps": 0.10931586799671672,
+            "packet_rate": 17.123751308046817,
+            "active_flows": 1.2343560763685186,
+            "latency_ms": 0.017886745485535475,
+            "retransmission_rate": 0.32451652298376255,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3575.6655638499697,
+            "flow_entropy": 0.29956278267955244
+        },
+        "classification_accuracy": {
+            "surge": 0.9688763136620857,
+            "congestion": 0.6806790622473726
+        }
+    },
+    "5m": {
+        "regression_mae": {
+            "throughput_mbps": 0.13986008198619537,
+            "packet_rate": 18.73740828339863,
+            "active_flows": 1.295821163234156,
+            "latency_ms": 0.018052275709053274,
+            "retransmission_rate": 0.346254052157826,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 3616.4288875754596,
+            "flow_entropy": 0.37012919345135636
+        },
+        "classification_accuracy": {
+            "surge": 0.9329021827000809,
+            "congestion": 0.6182295877122069
+        }
+    },
+    "15m": {
+        "regression_mae": {
+            "throughput_mbps": 0.3148884315469529,
+            "packet_rate": 41.6698940706523,
+            "active_flows": 1.2439397686223594,
+            "latency_ms": 0.01796386736179103,
+            "retransmission_rate": 0.33746921332948243,
+            "packet_drop_rate": 4.489422281039879e-05,
+            "burstiness": 13271.094222981947,
+            "flow_entropy": 0.3782377253419295
+        },
+        "classification_accuracy": {
+            "surge": 0.982821341956346,
+            "congestion": 0.5759902991107518
+        }
+    },
+    "60m": {
+        "regression_mae": {
+            "throughput_mbps": 0.4014904288198367,
+            "packet_rate": 45.28287110428899,
+            "active_flows": 2.619370612292494,
+            "latency_ms": 0.05706950377740158,
+            "retransmission_rate": 0.30857809513175183,
+            "packet_drop_rate": 0.00161829502283751,
+            "burstiness": 23300.417625608687,
+            "flow_entropy": 0.5090605704286587
+        },
+        "classification_accuracy": {
+            "surge": 0.8633791430881164,
+            "congestion": 0.7417138237671786
+        }
+    }
+}

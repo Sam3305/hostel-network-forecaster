@@ -1,6 +1,7 @@
 import pandas as pd
 import mysql.connector
 import joblib
+import numpy as np
 import warnings
 import os
 import argparse
@@ -41,6 +42,8 @@ def get_historic_metrics(target_time_str):
 def feature_engineering(df):
     df['hour'] = df.index.hour
     df['minute'] = df.index.minute
+    df['day_of_week'] = df.index.dayofweek
+    df['is_weekend'] = (df.index.dayofweek >= 5).astype(int)
     
     metrics = ['throughput_mbps', 'packet_rate', 'active_flows', 
                'latency_ms', 'retransmission_rate', 'packet_drop_rate', 
@@ -49,7 +52,16 @@ def feature_engineering(df):
     for col in metrics:
         df[f'{col}_lag1'] = df[col].shift(1)
         df[f'{col}_lag5'] = df[col].shift(5)
-        df[f'{col}_roll15_mean'] = df[col].rolling(window=15).mean()
+        df[f'{col}_velocity'] = df[col] - df[col].shift(1)
+        
+        # Consistent Features: matching train_multi_horizon.py
+        df[f'{col}_roll30_mean'] = df[col].rolling(window=30, min_periods=1).mean()
+        df[f'{col}_roll30_std'] = df[col].rolling(window=30, min_periods=1).std()
+        
+        df[f'{col}_roll120_mean'] = df[col].rolling(window=120, min_periods=1).mean()
+        df[f'{col}_roll120_std'] = df[col].rolling(window=120, min_periods=1).std()
+        
+        df[f'{col}_roll300_mean'] = df[col].rolling(window=300, min_periods=1).mean()
         
     return df.iloc[[-1]]
 
@@ -64,6 +76,7 @@ def run_on_demand(target_time_str):
 
     mh_models = joblib.load(mh_model_path)
     mh_features = joblib.load(mh_features_path)
+    scaler = joblib.load(os.path.join(script_dir, 'scaler.pkl'))
 
     df_recent = get_historic_metrics(target_time_str)
     if df_recent is None:
@@ -71,21 +84,24 @@ def run_on_demand(target_time_str):
         return
         
     processed_row_mh = feature_engineering(df_recent)
-    X_mh = processed_row_mh[mh_features]
+    X_mh_raw = processed_row_mh[mh_features]
+    X_mh = scaler.transform(X_mh_raw)
     
-    horizons = ['2s', '5s', '10s', '1m', '5m', '60m']
+    horizons = [f'{i}s' for i in range(1, 61)] + ['5m', '15m', '60m']
     output_payload = {}
     
     for h_name in horizons:
         try:
-            pred_throughput = float(mh_models[f'throughput_mbps_{h_name}'].predict(X_mh)[0])
-            pred_packet = float(mh_models[f'packet_rate_{h_name}'].predict(X_mh)[0])
-            pred_flows = int(mh_models[f'active_flows_{h_name}'].predict(X_mh)[0])
-            pred_latency = float(mh_models[f'latency_ms_{h_name}'].predict(X_mh)[0])
-            pred_retrans = float(mh_models[f'retransmission_rate_{h_name}'].predict(X_mh)[0])
-            pred_drop = float(mh_models[f'packet_drop_rate_{h_name}'].predict(X_mh)[0])
-            pred_burst = float(mh_models[f'burstiness_{h_name}'].predict(X_mh)[0])
-            pred_entropy = float(mh_models[f'flow_entropy_{h_name}'].predict(X_mh)[0])
+            # Predictions are logged; apply expm1 to restore real values
+            pred_throughput = float(np.expm1(mh_models[f'throughput_mbps_{h_name}'].predict(X_mh)[0]))
+            pred_packet = float(np.expm1(mh_models[f'packet_rate_{h_name}'].predict(X_mh)[0]))
+            pred_flows = int(np.expm1(mh_models[f'active_flows_{h_name}'].predict(X_mh)[0]))
+            pred_latency = float(np.expm1(mh_models[f'latency_ms_{h_name}'].predict(X_mh)[0]))
+            pred_retrans = float(np.expm1(mh_models[f'retransmission_rate_{h_name}'].predict(X_mh)[0]))
+            pred_drop = float(np.expm1(mh_models[f'packet_drop_rate_{h_name}'].predict(X_mh)[0]))
+            pred_burst = float(np.expm1(mh_models[f'burstiness_{h_name}'].predict(X_mh)[0]))
+            pred_entropy = float(np.expm1(mh_models[f'flow_entropy_{h_name}'].predict(X_mh)[0]))
+            
             surge_proba = float(mh_models[f'surge_{h_name}'].predict_proba(X_mh)[0][1]) * 100
             congest_proba = float(mh_models[f'congestion_{h_name}'].predict_proba(X_mh)[0][1]) * 100
             
@@ -104,10 +120,19 @@ def run_on_demand(target_time_str):
         except Exception as e:
             pass
             
+    # Load evaluation results if available
+    eval_results = {}
+    eval_path = os.path.join(script_dir, 'evaluation_results.json')
+    if os.path.exists(eval_path):
+        with open(eval_path, 'r') as f:
+            eval_results = json.load(f)
+            
     print(json.dumps({
         "status": "success",
         "anchor_time": target_time_str,
-        "predictions": output_payload
+        "predictions": output_payload,
+        "model_accuracy": eval_results.get('5m', {}).get('classification_accuracy', {}).get('congestion', 0) * 100,
+        "eval_metrics": eval_results
     }))
 
 if __name__ == "__main__":

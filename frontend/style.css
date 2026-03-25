@@ -218,8 +218,26 @@ header {
 /* AI Metric Custom */
 .ai-panel { position: relative; border-color: rgba(255, 0, 127, 0.3); box-shadow: 0 0 20px rgba(255, 0, 127, 0.1); }
 .ai-metrics { display: flex; justify-content: space-around; font-family: var(--font-mono); font-size: 0.9rem; margin-bottom: 1rem; background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 8px; }
-.ai-grid { display: flex; gap: 1rem; align-items: center; }
-.gauge-container { flex: 0 0 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ai-grid { 
+    display: flex; 
+    gap: 1.5rem; 
+    align-items: center; 
+}
+
+.gauges-wrapper {
+    display: flex;
+    gap: 1rem;
+    flex: 0 0 auto;
+}
+
+.gauge-container { 
+    width: 160px;
+    height: 140px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    position: relative;
+}
 .prediction-chart-container { flex: 1; }
 
 /* Logs */

@@ -85,17 +85,26 @@ $user_role = $_SESSION['role'] ?? 'user';
                             <button class="toggle-btn" data-horizon="2s">2 Sec</button>
                             <button class="toggle-btn" data-horizon="5s">5 Sec</button>
                             <button class="toggle-btn" data-horizon="10s">10 Sec</button>
-                            <button class="toggle-btn" data-horizon="1m">1 Min</button>
+                            <button class="toggle-btn" data-horizon="60s">1 Min</button>
                             <button class="toggle-btn active" data-horizon="5m">5 Min</button>
                             <button class="toggle-btn" data-horizon="60m">1 Hour</button>
                         </div>
                     </h2>
-                    <div class="ai-metrics">
+                    <div class="ai-metrics" style="display: flex; gap: 2rem;">
                         <div class="ai-metric">Congestion Risk: <span class="highlight-orange" id="val-congestion-risk">--%</span></div>
+                        <div class="ai-metric">Surge Risk: <span class="highlight-cyan" id="val-surge-risk">--%</span></div>
+                        <div class="ai-metric">Model Accuracy: <span class="highlight-pink" id="val-model-accuracy">--%</span></div>
                     </div>
                     <div class="ai-grid">
-                        <div class="gauge-container">
-                            <canvas id="gauge-surge" style="max-height: 140px;"></canvas>
+                        <div class="gauges-wrapper">
+                            <div class="gauge-container">
+                                <span style="font-size: 0.6rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">Congestion</span>
+                                <canvas id="gauge-congestion" style="max-height: 120px;"></canvas>
+                            </div>
+                            <div class="gauge-container">
+                                <span style="font-size: 0.6rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">Surge</span>
+                                <canvas id="gauge-surge" style="max-height: 120px;"></canvas>
+                            </div>
                         </div>
                         <div class="prediction-chart-container">
                             <canvas id="chart-user-predicted"></canvas>
@@ -110,6 +119,17 @@ $user_role = $_SESSION['role'] ?? 'user';
                         <li class="log-item log-alert"><span class="log-time">[System]</span> <span class="log-msg">High burstiness detected.</span></li>
                         <li class="log-item log-ai"><span class="log-time">[System]</span> <span class="log-msg">Possible surge in 15 minutes.</span></li>
                     </ul>
+                </section>
+
+                <section class="glass-panel audit-panel" style="margin-top: 1.5rem;">
+                    <h2 class="section-title gradient-text">AI PERFORMANCE AUDIT (GROUND TRUTH COMPARISON)</h2>
+                    <div id="audit-grid" class="audit-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                        <div class="audit-card glass-panel-dark" style="padding: 1rem; border-radius: 10px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05);">
+                            <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Average Fidelity</div>
+                            <div id="audit-global-fidelity" style="font-size: 1.5rem; font-weight: 800; color: var(--green);">Waiting...</div>
+                        </div>
+                        <!-- Individual metrics will be populated here by JS -->
+                    </div>
                 </section>
             </div>
         </div>

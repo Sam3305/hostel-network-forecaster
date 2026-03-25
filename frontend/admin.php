@@ -31,22 +31,23 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
              <div class="kpi-card glass-panel kpi-admin">
                 <div class="kpi-title">Dataset Monitoring</div>
                 <div class="sys-metrics">
-                    <div>Total PCAP Captures: <span class="highlight-cyan">142</span></div>
-                    <div>Dataset Size: <span class="highlight-cyan">4.2 GB</span></div>
-                    <div>Dataset Rows: <span class="highlight-cyan">12,430</span></div>
-                    <div>Capture Status: <span class="highlight-green">Active (Last 17:30)</span></div>
-                    <div>Packets Captured: <span class="highlight-purple">21,430</span></div>
+                    <div>Total PCAP Captures: <span class="highlight-cyan" id="admin-total-captures">...</span></div>
+                    <div>Dataset Size: <span class="highlight-cyan" id="admin-dataset-size">...</span></div>
+                    <div>Dataset Rows: <span class="highlight-cyan" id="admin-dataset-rows">...</span></div>
+                    <div>Capture Status: <span id="admin-capture-status" class="highlight-green">...</span></div>
+                    <div>Packets Captured: <span class="highlight-purple" id="admin-packets-captured">...</span></div>
                 </div>
             </div>
             
             <div class="kpi-card glass-panel kpi-admin">
                 <div class="kpi-title">Prediction Monitoring</div>
                  <div class="sys-metrics">
-                    <div>Model Accuracy (R²): <span class="highlight-pink">0.92</span></div>
-                    <div>Training Dataset Size: <span class="highlight-cyan">10,000</span></div>
-                    <div>Last Training: <span class="highlight-orange">02:00 AM</span></div>
+                    <div>Avg Surge Accuracy: <span class="highlight-pink" id="admin-surge-accuracy">...</span></div>
+                    <div>Avg Congestion Accuracy: <span class="highlight-cyan" id="admin-congestion-accuracy">...</span></div>
+                    <div>Training Dataset Size: <span class="highlight-cyan" id="admin-training-size">...</span></div>
+                    <div>Last Training: <span class="highlight-orange" id="admin-last-training">...</span></div>
                     <div style="margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 5px;">System Log:</div>
-                    <div class="highlight-red">18:05 Burst spike detected...</div>
+                    <div id="admin-system-log" class="highlight-red">...</div>
                 </div>
             </div>
         </section>
@@ -55,14 +56,32 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
         <div class="admin-controls-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
             
             <section class="glass-panel group-panel">
-                <h3 class="kpi-title" style="margin-bottom: 1rem; color: var(--neon-cyan);">1. User Management (Gatekeeper)</h3>
-                <div id="admin-user-list" class="user-list-container" style="max-height: 250px; overflow-y: auto;">
+                <h3 class="kpi-title" style="margin-bottom: 1rem; color: var(--neon-cyan);">1. User Management</h3>
+                <div id="admin-user-list" class="user-list-container" style="max-height: 200px; overflow-y: auto;">
                     <div style="color: var(--text-muted); font-size: 0.8rem;">Loading users...</div>
+                </div>
+                <div style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.8rem;">
+                    <div id="add-user-toggle" style="text-align: center;">
+                        <button class="neon-btn" style="width: 100%; padding: 0.4rem; font-size: 0.8rem;" onclick="document.getElementById('add-user-form').style.display='flex'; this.parentElement.style.display='none';">+ Add User</button>
+                    </div>
+                    <form id="add-user-form" style="display: none; flex-direction: column; gap: 0.5rem;">
+                        <input type="text" id="new-username" placeholder="Username" required style="background: rgba(0,0,0,0.5); border: 1px solid var(--border-color); color: white; padding: 0.35rem 0.5rem; border-radius: 4px; font-size: 0.8rem; outline: none;">
+                        <input type="password" id="new-password" placeholder="Password" required style="background: rgba(0,0,0,0.5); border: 1px solid var(--border-color); color: white; padding: 0.35rem 0.5rem; border-radius: 4px; font-size: 0.8rem; outline: none;">
+                        <select id="new-role" style="background: rgba(0,0,0,0.5); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 4px; padding: 0.35rem; font-size: 0.8rem; outline: none;">
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button type="submit" class="neon-btn" style="flex: 1; padding: 0.4rem; font-size: 0.8rem;">Create</button>
+                            <button type="button" class="neon-btn" style="flex: 1; padding: 0.4rem; font-size: 0.8rem; color: var(--text-muted); border-color: var(--text-muted);" onclick="document.getElementById('add-user-form').style.display='none'; document.getElementById('add-user-toggle').style.display='block';">Cancel</button>
+                        </div>
+                        <div id="add-user-message" style="font-size: 0.75rem; text-align: center;"></div>
+                    </form>
                 </div>
             </section>
 
             <section class="glass-panel group-panel">
-                <h3 class="kpi-title" style="margin-bottom: 1rem; color: var(--neon-purple);">2. Rule Maker (Thresholds)</h3>
+                <h3 class="kpi-title" style="margin-bottom: 1rem; color: var(--neon-purple);">2. Thresholds</h3>
                 <form id="admin-config-form" style="display: flex; flex-direction: column; gap: 0.8rem;">
                     <div class="input-group" style="margin-bottom: 0;">
                         <label>Surge Sensitivity (Mbps)</label>
@@ -86,7 +105,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
             </section>
 
             <section class="glass-panel group-panel" style="position: relative;">
-                <h3 class="kpi-title" style="margin-bottom: 1rem; color: var(--neon-orange);">3. DB Health (Janitor)</h3>
+                <h3 class="kpi-title" style="margin-bottom: 1rem; color: var(--neon-orange);">3. DB Health</h3>
                 <div class="sys-metrics" id="db-stats-container">
                     <div>Metrics Rows: <span class="highlight-cyan" id="db-metrics-count">Loading...</span></div>
                     <div>Capture Files: <span class="highlight-cyan" id="db-captures-count">Loading...</span></div>
